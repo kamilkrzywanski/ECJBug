@@ -1,9 +1,5 @@
 package com.foobar.showme.baz;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
-
 import java.util.Map;
 
 public class Test {
