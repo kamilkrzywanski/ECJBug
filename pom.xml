@@ -19,29 +19,49 @@
         <version>1.18.36</version>
         <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <executions>
+          <execution>
+            <id>set-properties</id>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.0</version>
         <configuration>
-          <generatedSourcesDirectory>target/generated-sources</generatedSourcesDirectory>
-          <useIncrementalCompilation>false</useIncrementalCompilation>
-          <!--                        <debug>true</debug>
-                                  <compilerArgs>
-                                      <arg>-verbose</arg>
-                                      <arg>-g</arg>
-                                      <arg>-Xlint:all</arg>
-                                  </compilerArgs>-->
-          <annotationProcessors>
-            <processor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</processor>
-          </annotationProcessors>
+          <encoding>UTF-8</encoding>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.36</version>
+            </path>
+          </annotationProcessorPaths>
           <compilerId>eclipse</compilerId>
         </configuration>
         <dependencies>
+          <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+          </dependency>
           <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-compiler-eclipse</artifactId>
@@ -51,16 +71,6 @@
             <groupId>org.eclipse.jdt</groupId>
             <artifactId>ecj</artifactId>
             <version>${ecj.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.0.Final</version>
-          </dependency>
-          <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.36</version>
           </dependency>
         </dependencies>
       </plugin>
