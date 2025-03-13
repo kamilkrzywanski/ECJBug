@@ -36,6 +36,9 @@
                                       <arg>-g</arg>
                                       <arg>-Xlint:all</arg>
                                   </compilerArgs>-->
+          <annotationProcessors>
+            <processor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</processor>
+          </annotationProcessors>
           <compilerId>eclipse</compilerId>
         </configuration>
         <dependencies>
