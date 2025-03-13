@@ -14,12 +14,6 @@
 
   <dependencies>
     <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.36</version>
-        <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.12.0</version>
@@ -47,23 +41,11 @@
         <version>3.14.0</version>
         <configuration>
           <encoding>UTF-8</encoding>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>1.18.36</version>
-            </path>
-          </annotationProcessorPaths>
           <compilerId>eclipse</compilerId>
           <source>9</source>
           <target>9</target>
         </configuration>
         <dependencies>
-          <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.36</version>
-          </dependency>
           <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-compiler-eclipse</artifactId>
